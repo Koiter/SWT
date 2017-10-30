@@ -22,7 +22,7 @@ def getSameAs(uri):
     for r in results:
         p = r['p']['value']
         if 'dbpedia' in p:#filter out non-dbpedia resources
-            resources.append(p)
+            resources.append(p[p.rfind('/')+1:])
     return resources
     
 #print(getRelations('http://dbpedia.org/resource/The_Hague'))
